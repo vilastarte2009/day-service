@@ -17,7 +17,7 @@ public class DayServiceController {
 	@GetMapping("/{empID}")
 	Emp getDay(@PathVariable("empID") int id)
 	{
-		System.out.println("Day Service controller called");
+		System.out.println("Day Service controller called ...");
 		return dayservice.getTotalDays(id);
 	}
 
