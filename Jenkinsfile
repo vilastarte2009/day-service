@@ -12,7 +12,7 @@ pipeline {
        }
        stage('Build Docker'){
            steps{
-               bat 'docker build -t vilastarte/day-service-jenkin:latest .'
+               bat 'docker build -t vilastarte/day-service:latest .'
            }
        }
        
@@ -22,7 +22,7 @@ pipeline {
                    withCredentials([string(credentialsId: 'docker_hub_pwd', variable: 'docker_hub_pwd')]) {
                    bat 'docker login -u vilastarte -p Sonali@11'
                      }
-                   bat 'docker push vilastarte/day-service-jenkin:latest'
+                   bat 'docker push vilastarte/day-service:latest'
                }
                    
                }
